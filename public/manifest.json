@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "version"         : "1.0",
+  "name"            : "extension name",
+  "description"     : "extension description",
+
+  "action": {
+    "default_icon": {
+      "16": "img/Y.png"
+    },
+    "default_popup": "popup.html"
+  },
+
+  "permissions"   : ["history"],
+  "options_page": "options.html"
+}
