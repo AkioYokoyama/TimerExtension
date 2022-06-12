@@ -6,6 +6,6 @@ const rootEl = document.getElementById('root')
 
 if (rootEl) {
   ReactDOM.createRoot(rootEl).render(
-    <Timer />
+    <Timer limit={60} />
   );
 }
