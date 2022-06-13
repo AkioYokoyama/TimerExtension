@@ -4,14 +4,18 @@ import './popup.scss'
 const Timer: FC<{ limit: number }> = ({ limit }) => {
   const [time, setTime] = useState(limit);
   const [isStart, setIsStart] = useState(false);
+  const [intervalId, setIntervalId] = useState<any>();
   const tick = (): void => setTime((t) => t - 1);
   const start = (): void => {
     setIsStart(true);
-    const timerId = setInterval(tick, 1000);
+    setIntervalId(setInterval(tick, 1000));
   }
   const reset = (): void => {
     setTime(limit);
-    setIsStart(false)
+    setIsStart(false);
+  }
+  const stop = (): void => {
+    clearInterval(intervalId);
   }
 
   useEffect(() => {
@@ -32,7 +36,7 @@ const Timer: FC<{ limit: number }> = ({ limit }) => {
       <h1>{time}</h1>
       <div>
         <button onClick={reset}>Reset</button>
-        <button onClick={start}>Start</button>
+        { isStart ? <button onClick={stop}>Stop</button> : <button onClick={start}>Start</button> }
       </div>
     </section>
   )
