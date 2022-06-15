@@ -16,6 +16,7 @@ const Timer: FC<{ limit: number }> = ({ limit }) => {
   }
   const stop = (): void => {
     clearInterval(intervalId);
+    setIsStart(false);
   }
 
   useEffect(() => {
