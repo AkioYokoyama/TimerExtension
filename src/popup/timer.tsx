@@ -1,5 +1,5 @@
 import { FC, useState, useEffect } from 'react';
-import './popup.scss'
+import './timer.scss'
 
 const Timer: FC<{ limit: number }> = ({ limit }) => {
   const [time, setTime] = useState(limit);
@@ -33,15 +33,14 @@ const Timer: FC<{ limit: number }> = ({ limit }) => {
   })
 
   return(
-    <section className="popup">
-      <h1>{time}</h1>
-      <div>
-        <button onClick={reset}>Reset</button>
-        { isStart ? <button onClick={stop}>Stop</button> : <button onClick={start}>Start</button> }
+    <section className="timer">
+      <div className="timer__display">{time}</div>
+      <div className="timer__button-area">
+        <button className="timer__button timer__button--reset" onClick={reset}>Reset</button>
+        { isStart ? <button className="timer__button timer__button--stop" onClick={stop}>Stop</button> : <button className="timer__button timer__button--start" onClick={start}>Start</button> }
       </div>
     </section>
   )
 }
-
 
 export default Timer;
