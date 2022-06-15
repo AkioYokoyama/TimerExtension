@@ -35,9 +35,11 @@ const Timer: FC<{ limit: number }> = ({ limit }) => {
 
   return(
     <section className="timer">
-      <button onClick={countDown}>-</button>
-      <div className="timer__display">{time}</div>
-      <button onClick={countUp}>+</button>
+      <div className="timer__number-area">
+        <button className="timer__number-area--count-button" onClick={countDown}>-</button>
+        <div className="timer__number-area--number">{time}</div>
+        <button className="timer__number-area--count-button" onClick={countUp}>+</button>
+      </div>
       <div className="timer__button-area">
         <button className="timer__button timer__button--reset" onClick={reset}>Reset</button>
         { isStart ? <button className="timer__button timer__button--stop" onClick={stop}>Stop</button> : <button className="timer__button timer__button--start" onClick={start}>Start</button> }

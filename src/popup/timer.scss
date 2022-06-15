@@ -1,7 +1,17 @@
 .timer {
-  &__display {
-    text-align: center;
-    font-size: 50px;
+  &__number-area {
+    display: flex;
+    justify-content: center;
+    &--number {
+      margin: 0 10px;
+      font-size: 50px;
+      width: 60px;
+    }
+    &--count-button {
+      border: none;
+      width: 25px;
+      font-size: 30px;
+    }
   }
   &__button-area {
     display: flex;
