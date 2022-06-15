@@ -1,0 +1,26 @@
+.timer {
+  &__display {
+    text-align: center;
+    font-size: 50px;
+  }
+  &__button-area {
+    display: flex;
+    justify-content: center;
+  }
+  &__button {
+    width: 80px;
+    height: 30px;
+    margin: 10px 5px 0 0;
+    color: #fff;
+    border: none;
+    &--start {
+      background-color: #00cc00;
+    }
+    &--stop {
+      background-color: #cc3333;
+    }
+    &--reset {
+      background-color: #aaa;
+    }
+  }
+}
